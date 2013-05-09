@@ -15,11 +15,10 @@ int main(int argc, char *argv[])
     int heightScreen=350;
     int centerScreenX=QApplication::desktop()->width()/2-widthScreen/2;
     int centerScreenY=QApplication::desktop()->height()/2-heightScreen/2;
-    MainWindow w(new QRect(centerScreenX,centerScreenY,widthScreen,heightScreen));
-
-    w.show();
+     MainWindow w(new QRect(centerScreenX,centerScreenY,widthScreen,heightScreen));
 
 
+      w.show();
     
     return a.exec();
 }

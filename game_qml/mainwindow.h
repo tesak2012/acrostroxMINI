@@ -33,6 +33,7 @@ private:
 public slots:
      void timerEvent(QTimerEvent *e);
      void keyPressEvent(QKeyEvent *key);
+     void beginGame();
 
 };
 

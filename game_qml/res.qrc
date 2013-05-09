@@ -5,6 +5,11 @@
         <file>Image/rock10000.png</file>
         <file>Image/bg.bmp</file>
         <file>Image/ship01.png</file>
+        <file>qml/game_menu_qml/main.qml</file>
+        <file>qml/game_menu_qml/controls/CustomButton.qml</file>
+        <file>qml/game_menu_qml/controls/CustomTextBox.qml</file>
+        <file>qml/game_menu_qml/controls/CustomLabel.qml</file>
+        <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
     </qresource>
     <qresource prefix="/Sprites">
         <file>Image/Expolison/1.png</file>
@@ -39,5 +44,14 @@
         <file>Image/Expolison/30.png</file>
         <file>Image/Expolison/31.png</file>
         <file>Image/Expolison/32.png</file>
+    </qresource>
+    <qresource prefix="/res">
+        <file>Image/fonts/slkscre.ttf</file>
+        <file>Image/background_select_fill_sample.png</file>
+        <file>Image/background_select_fill_sample.psd</file>
+        <file>Image/BorderDefault.png</file>
+        <file>Image/BorderSelected.png</file>
+        <file>Image/Screen.png</file>
+        <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
     </qresource>
 </RCC>

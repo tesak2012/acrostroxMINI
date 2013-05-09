@@ -36,6 +36,8 @@ void Box::setSpeed(const qreal &value)
 bool Box::shipAnimation()
 {
     QObject* item=findChild<QObject*>("imageShip");
+    setWidth(70);
+    setHeight(70);
     QVariant a= item->property("source");
     item->setProperty("source",lstAnimation->at(indexSprite));
     indexSprite++;
