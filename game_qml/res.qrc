@@ -1,0 +1,57 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>g.qml</file>
+        <file>Image/rock10000.png</file>
+        <file>Image/bg.bmp</file>
+        <file>Image/ship01.png</file>
+        <file>qml/game_menu_qml/main.qml</file>
+        <file>qml/game_menu_qml/controls/CustomButton.qml</file>
+        <file>qml/game_menu_qml/controls/CustomTextBox.qml</file>
+        <file>qml/game_menu_qml/controls/CustomLabel.qml</file>
+        <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
+    </qresource>
+    <qresource prefix="/Sprites">
+        <file>Image/Expolison/1.png</file>
+        <file>Image/Expolison/2.png</file>
+        <file>Image/Expolison/3.png</file>
+        <file>Image/Expolison/4.png</file>
+        <file>Image/Expolison/5.png</file>
+        <file>Image/Expolison/6.png</file>
+        <file>Image/Expolison/7.png</file>
+        <file>Image/Expolison/8.png</file>
+        <file>Image/Expolison/9.png</file>
+        <file>Image/Expolison/10.png</file>
+        <file>Image/Expolison/11.png</file>
+        <file>Image/Expolison/12.png</file>
+        <file>Image/Expolison/13.png</file>
+        <file>Image/Expolison/14.png</file>
+        <file>Image/Expolison/15.png</file>
+        <file>Image/Expolison/16.png</file>
+        <file>Image/Expolison/17.png</file>
+        <file>Image/Expolison/18.png</file>
+        <file>Image/Expolison/19.png</file>
+        <file>Image/Expolison/20.png</file>
+        <file>Image/Expolison/21.png</file>
+        <file>Image/Expolison/22.png</file>
+        <file>Image/Expolison/23.png</file>
+        <file>Image/Expolison/24.png</file>
+        <file>Image/Expolison/25.png</file>
+        <file>Image/Expolison/26.png</file>
+        <file>Image/Expolison/27.png</file>
+        <file>Image/Expolison/28.png</file>
+        <file>Image/Expolison/29.png</file>
+        <file>Image/Expolison/30.png</file>
+        <file>Image/Expolison/31.png</file>
+        <file>Image/Expolison/32.png</file>
+    </qresource>
+    <qresource prefix="/res">
+        <file>Image/fonts/slkscre.ttf</file>
+        <file>Image/background_select_fill_sample.png</file>
+        <file>Image/background_select_fill_sample.psd</file>
+        <file>Image/BorderDefault.png</file>
+        <file>Image/BorderSelected.png</file>
+        <file>Image/Screen.png</file>
+        <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
+    </qresource>
+</RCC>
