@@ -29,11 +29,17 @@ public:
 private:
     int valueCounter;
     int timerId;
+    int stage;
+    bool initialize();
+    qreal nextStage();
+    bool running_stage;
+    QTimer *timerStageAnimation;
 
 public slots:
      void timerEvent(QTimerEvent *e);
      void keyPressEvent(QKeyEvent *key);
      void beginGame();
+     void timerStageAnimationEvent();
 
 };
 

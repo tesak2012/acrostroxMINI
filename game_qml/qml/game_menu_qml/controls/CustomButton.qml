@@ -87,7 +87,7 @@ Rectangle {
             PropertyChanges
             {
                 target: filter_rectangle;
-                color: "#fff000"
+                color: Settings.selectedColor
             }
         },
 
@@ -97,7 +97,7 @@ Rectangle {
             PropertyChanges
             {
                 target: filter_rectangle;
-                color: "#8ae4ad"
+                color: Settings.defaultColor
             }
         },
 
@@ -125,7 +125,7 @@ Rectangle {
             PropertyChanges
             {
                 target: filter_rectangle;
-                color: "#8ae4ad"
+                color: Settings.defaultColor
             }
         }
     ]

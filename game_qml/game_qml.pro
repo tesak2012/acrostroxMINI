@@ -26,8 +26,7 @@ OTHER_FILES += \
     qml/game_menu_qml/controls/CustomButtonSettings.js \
     qml/game_menu_qml/controls/CustomTextBox.qml \
     qml/game_menu_qml/controls/CustomLabel.qml \
-    qml/game_menu_qml/controls/CustomButton.qml \
-    CustomButtonSettings.js
+    qml/game_menu_qml/controls/CustomButton.qml
 
 
 RESOURCES += \

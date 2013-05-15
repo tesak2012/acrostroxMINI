@@ -1,4 +1,4 @@
-var defaultColor = "#8ae4ad";
+var defaultColor = "red";
 var selectedColor = "#fff000";
 
 

@@ -34,7 +34,7 @@ Rectangle
 //        font.pixelSize: parent.height - 6
         font.family: fontLoader.name
         color: Settings.defaultColor
-//        ColorAnimation on color { to: Settings.defaultColor; duration: 500 }
+     //   ColorAnimation on color { to: Settings.sColor; duration: 500 }
     }
 
 }

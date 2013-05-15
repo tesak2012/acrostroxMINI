@@ -1,6 +1,7 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import BoxModel 1.0
+import "qml/game_menu_qml/controls"
 
 Rectangle {
     id: windowPage
@@ -8,6 +9,23 @@ Rectangle {
     height: 350
     color: "#fdfdfd"
     //window.height
+
+    CustomLabel
+    {
+        id: labelStage
+        objectName: "labelStage"
+        text: "STAGE "+stage
+        glowTime: 0
+        z: 2
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        fontPixelSize: 36
+        border.width: 0
+        opacity: 0
+        colorText:"yellow"
+
+    }
+
 
     Box
     {
@@ -152,6 +170,13 @@ Rectangle {
             source: "qrc:/Image/bg.bmp"
     }
 
+    SequentialAnimation
+    {
+        loops: Animation.Infinite
+        running: true
+        NumberAnimation { target: labelStage; property: "opacity";from: 0; to: 1.0; duration: 200 }
+        NumberAnimation { target: labelStage; property: "rotation";from: 0; to: 360; duration: 800 }
 
+    }
 
 }
