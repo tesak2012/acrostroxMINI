@@ -24,7 +24,10 @@ MainWindow::MainWindow(QRect *rect,QWidget *parent)
 
     //timerId=startTimer(5);
 
+    /////////////////////////////////////
+
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -33,16 +36,38 @@ MainWindow::~MainWindow()
 
 void MainWindow::game_over()
 {
-    QMessageBox msg;
-    QString str="Your result is "+QString().number(valueTime);
-    msg.setText(str);
 
-    msg.exec();
-    this->close();
+
+
+    //////////////////////////////////////////////
+
+    QString str="Your time is "+QString().number(valueTime);
+    dv = new QDeclarativeView;
+    dv->setSource(QUrl("qrc:/qml/game_menu_qml/results.qml"));
+     setCentralWidget(dv);
+
+    dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    cntx = dv->rootContext();
+    cntx->setContextProperty("memostr",str);
+
+
+
+
+
+
+
+//    QMessageBox msg;
+
+//    msg.setText(str);
+
+//    msg.exec();
+//    this->close();
 
 }
 
-
+//void MainWindow::FunctionC()
+//{
+//}
 void MainWindow::timerEvent(QTimerEvent *e)
 {
 

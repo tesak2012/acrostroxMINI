@@ -4,7 +4,7 @@ import "CustomButtonSettings.js" as Settings
 
 Rectangle
 {
-    id: customLabel
+    id: customLabel1
 
     property alias text: buttonText.text
     property alias fontPixelSize: buttonText.font.pixelSize
@@ -34,7 +34,6 @@ Rectangle
 //        font.pixelSize: parent.height - 6
         font.family: fontLoader.name
         color: Settings.defaultColor
-
 //        ColorAnimation on color { to: Settings.defaultColor; duration: 500 }
     }
 

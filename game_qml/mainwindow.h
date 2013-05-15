@@ -23,12 +23,16 @@ public:
     QDeclarativeView* dv;
     qreal speed;
     qreal valueTime;
-
+// Q_INVOKABLE void FunctionC();
     void game_over();
 
 private:
     int valueCounter;
     int timerId;
+
+QDeclarativeView *ui;
+QObject *Root;
+
 
 public slots:
      void timerEvent(QTimerEvent *e);

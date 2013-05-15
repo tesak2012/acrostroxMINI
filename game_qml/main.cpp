@@ -4,6 +4,7 @@
 #include "block.h"
 #include "qdeclarative.h"
 #include "box.h"
+#include "QGraphicsObject"
 
 int main(int argc, char *argv[])
 {

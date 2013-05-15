@@ -10,6 +10,8 @@
         <file>qml/game_menu_qml/controls/CustomTextBox.qml</file>
         <file>qml/game_menu_qml/controls/CustomLabel.qml</file>
         <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
+        <file>qml/game_menu_qml/results.qml</file>
+        <file>Image/images1.png</file>
     </qresource>
     <qresource prefix="/Sprites">
         <file>Image/Expolison/1.png</file>
