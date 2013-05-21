@@ -1,7 +1,6 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
 #include "QDesktopWidget"
-#include "block.h"
 #include "qdeclarative.h"
 #include "box.h"
 
@@ -11,6 +10,8 @@ int main(int argc, char *argv[])
 
 
 
+    //int widthScreen=QApplication::desktop()->width();
+    //int heightScreen=QApplication::desktop()->width();
     int widthScreen=350;
     int heightScreen=350;
     int centerScreenX=QApplication::desktop()->width()/2-widthScreen/2;

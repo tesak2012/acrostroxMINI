@@ -8,8 +8,8 @@ Rectangle {
 
     property alias text: buttonText.text
 
-    width: 150
-    height: 25
+    width: window.width/2
+    height: window.height/14
 
     radius: 8
 

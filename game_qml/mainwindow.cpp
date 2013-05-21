@@ -3,21 +3,15 @@
 MainWindow::MainWindow(QRect *rect,QWidget *parent)
     : QMainWindow(parent)
 {
-
     this->setGeometry(*rect);
-
     timerStageAnimation=new QTimer();
     dv = new QDeclarativeView();
     cntx = dv->rootContext();
     cntx->setContextProperty("window",this);
-    //dv->setSource(QUrl("qrc:/main.qml"));
-    //
     dv->setSource(QUrl("qrc:/qml/game_menu_qml/main.qml"));
     dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
     setCentralWidget(dv);
     connect(timerStageAnimation,SIGNAL(timeout()),this,SLOT(timerStageAnimationEvent()));
-    //dv->rootObject()->children().append();
-    //timerId=startTimer(5);
 
 }
 
@@ -32,12 +26,45 @@ void MainWindow::game_over()
 {
     QMessageBox msg;
     QString str="Your result is "+QString().number(valueTime);
-    msg.setText(str);
+    //msg.setText(str);
+   // msg.exec();
+    //dv->setSource(QUrl("qrc:/qml/game_menu_qml/main.qml"));
+    //initialize();
+    //QString str="Your time is "+QString().number(valueTime);
+    dv = new QDeclarativeView;
+    cntx = dv->rootContext();
+    cntx->setContextProperty("memostr",str);
+    cntx->setContextProperty("window",this);
+    dv->setSource(QUrl("qrc:/qml/game_menu_qml/results.qml"));
+    setCentralWidget(dv);
+    dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
 
-    msg.exec();
-    dv->setSource(QUrl("qrc:/qml/game_menu_qml/main.qml"));
-    initialize();
 
+
+}
+
+bool MainWindow::PlayPause()
+{
+    if(play==true)
+    {
+        play=false;
+        killTimer(timerId);
+        speed=0;
+        dv->rootObject()->findChild<QObject*>("starShip")->setProperty("speed",1);
+        cntx->setContextProperty("speedBox",speed);
+
+        dv->rootObject()->findChild<QObject*>("labelPause")->setProperty("z",10);
+    }
+    else
+    {
+        dv->rootObject()->findChild<QObject*>("labelPause")->setProperty("z",0);
+        play=true;
+                dv->rootObject()->findChild<QObject*>("starShip")->setProperty("speed",0);
+                timerId=startTimer(5);
+                speed=stage*0.5;
+                cntx->setContextProperty("speedBox",speed);
+    }
+    return play;
 }
 
 bool MainWindow::initialize()
@@ -46,6 +73,7 @@ bool MainWindow::initialize()
     valueCounter=0;
     stage=0;
     speed=0.5;
+    return true;
 }
 
 qreal MainWindow::nextStage()
@@ -82,6 +110,7 @@ void MainWindow::timerEvent(QTimerEvent *e)
         {
             speed=0;
             killTimer(timerId);
+
             game_over();
         }
         else if(ROOT->findChild<QObject*>("starShip")->property("speed")==-0.5)
@@ -91,15 +120,31 @@ void MainWindow::timerEvent(QTimerEvent *e)
 
 void MainWindow::keyPressEvent(QKeyEvent *key)
 {
-    if(key->key()==Qt::Key_Escape)
+    if(key->key()==Qt::Key_Space)
     {
         killTimer(timerId);
         speed=0;
         dv->rootObject()->findChild<QObject*>("starShip")->setProperty("speed",1);
         cntx->setContextProperty("speedBox",speed);
+
+        dv->rootObject()->findChild<QObject*>("labelPause")->setProperty("z",10);
+        play=false;
+    }
+    if(key->key()==Qt::Key_Escape)
+    {
+        speed=0;
+         killTimer(timerId);
+         cntx->setContextProperty("window",this);
+         timerStageAnimation->stop();
+
+         dv->setSource(QUrl("qrc:/qml/game_menu_qml/main.qml"));
+
+
     }
     if(key->key()==Qt::Key_1)
     {
+        dv->rootObject()->findChild<QObject*>("labelPause")->setProperty("z",0);
+play=true;
         dv->rootObject()->findChild<QObject*>("starShip")->setProperty("speed",0);
         timerId=startTimer(5);
         speed=stage*0.5;
@@ -113,7 +158,7 @@ void MainWindow::beginGame()
    // this->setGeometry(*rect);
 
     initialize();
-
+    play=true;
     dv = new QDeclarativeView();
     cntx = dv->rootContext();
     cntx->setContextProperty("window",this);
@@ -138,3 +183,34 @@ void MainWindow::timerStageAnimationEvent()
 }
 
 
+void MainWindow::beginBasa()
+{
+    dv = new QDeclarativeView();
+    cntx = dv->rootContext();
+    cntx->setContextProperty("window",this);
+    dv->setSource(QUrl("qrc:/basa.qml"));
+    dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    setCentralWidget(dv);
+}
+
+void MainWindow::beginResult()
+{
+    dv = new QDeclarativeView();
+    cntx = dv->rootContext();
+    cntx->setContextProperty("window",this);
+    cntx->setContextProperty("valueTime",valueTime);
+    dv->setSource(QUrl("qrc:/result.qml"));
+    dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    setCentralWidget(dv);
+
+}
+
+void MainWindow::returnMenu()
+{
+    dv = new QDeclarativeView();
+    cntx = dv->rootContext();
+    cntx->setContextProperty("window",this);
+    dv->setSource(QUrl("qrc:/qml/game_menu_qml/main.qml"));
+    dv->setResizeMode(QDeclarativeView::SizeRootObjectToView);
+    setCentralWidget(dv);
+}

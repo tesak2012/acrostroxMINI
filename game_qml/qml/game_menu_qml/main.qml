@@ -7,17 +7,15 @@ Rectangle
     property int animationTime: 500
 
     id: main_menu
-    width: 350
-    height: 350
+    width: window.width
+    height: window.height
     color: "black"
 
     Image
     {
         id: background
-
         anchors.fill: parent
-       source: "qrc:/Image/bg.bmp"
-
+        source: "qrc:/Image/bg.bmp"
         fillMode: Image.Stretch;
         smooth: true
     }
@@ -28,7 +26,7 @@ Rectangle
         x: parent.width / 2 - width / 2
         y: parent.width / 4 - height / 2
         text: "ACROSTROX"
-        fontPixelSize: 36
+        fontPixelSize: parent.width/10
         border.width: 0
         opacity: 0
         colorText:"yellow"
@@ -98,12 +96,18 @@ Rectangle
 
         CustomButton
         {
-            id: settingsButton
+            id: statisticsButton
            opacity: 0
 
             //x: 100
            // y: 200
-            text: "SETTINGS"
+            text: "STATISTICS"
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked: window.beginBasa()
+
+            }
             Behavior on opacity { NumberAnimation {} }
         }
 
@@ -133,7 +137,7 @@ Rectangle
        NumberAnimation { target: mainMenu_column; property: "opacity";from: 0; to: 1.0; duration: animationTime }
 
         NumberAnimation { target: playButton; property: "opacity"; from: 0; to: 1.0; duration: animationTime }
-        NumberAnimation { target: settingsButton; property: "opacity"; from: 0; to: 1.0; duration: animationTime }
+        NumberAnimation { target:  statisticsButton; property: "opacity"; from: 0; to: 1.0; duration: animationTime }
         NumberAnimation { target: quitButton; property: "opacity"; from: 0; to: 1.0; duration: animationTime }
     }
 }

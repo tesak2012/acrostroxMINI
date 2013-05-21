@@ -5,7 +5,6 @@
 #include <QtDeclarative/QDeclarativeContext>
 #include <QtDeclarative/QDeclarativeView>
 #include "qdeclarative.h"
-#include "block.h"
 #include "QTimer"
 #include "QMessageBox"
 #include "QKeyEvent"
@@ -23,8 +22,9 @@ public:
     QDeclarativeView* dv;
     qreal speed;
     qreal valueTime;
-
+    bool play;
     void game_over();
+
 
 private:
     int valueCounter;
@@ -36,11 +36,14 @@ private:
     QTimer *timerStageAnimation;
 
 public slots:
+     bool PlayPause();
      void timerEvent(QTimerEvent *e);
      void keyPressEvent(QKeyEvent *key);
      void beginGame();
      void timerStageAnimationEvent();
-
+     void beginBasa();
+     void beginResult();
+     void returnMenu();
 };
 
 #endif // MAINWINDOW_H

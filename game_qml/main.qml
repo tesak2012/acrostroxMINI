@@ -5,10 +5,10 @@ import "qml/game_menu_qml/controls"
 
 Rectangle {
     id: windowPage
-    width: 350//window.width
-    height: 350
-    color: "#fdfdfd"
-    //window.height
+    width: window.width
+    height: window.height
+
+
 
     CustomLabel
     {
@@ -19,13 +19,27 @@ Rectangle {
         z: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        fontPixelSize: 36
+        fontPixelSize: parent.height/17
         border.width: 0
         opacity: 0
         colorText:"yellow"
 
     }
+    CustomLabel
+    {
+        id: labelPause
+        objectName: "labelPause"
+        text: "PAUSE"
+        glowTime: 0
+        z: 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        fontPixelSize: parent.height/17
+        border.width: 0
+        opacity: 0
+        colorText:"yellow"
 
+    }
 
     Box
     {
@@ -59,8 +73,8 @@ Rectangle {
     Box
     {
 
-        width: 40
-        height: 40
+        width: parent.width/9
+        height: parent.height/9
         z: 1
         //anchors.left: parent.left
         //anchors.top: parent.top
@@ -77,14 +91,14 @@ Rectangle {
     }
     Box
     {
-        width: 60
-        height: 60
+        width: parent.width/6
+        height:  parent.height/6
         z: 1
         //anchors.right: parent.right
         //anchors.top: parent.top
         name:"enemyBlockBigSecond"
-        x: 255//window.width-width-10
-        y:25 //10
+        x: window.width-width-10
+        y:10
         objectName: "enemyBlockBigSecond"
         speed:speedBox
         Image {
@@ -95,14 +109,13 @@ Rectangle {
     }
     Box
     {
-        width: 80
-        height: 40
+        width: parent.width/4
+        height:  parent.height/9
         z: 1
-        //anchors.right: parent.right
-        //anchors.bottom: parent.bottom
+
         name:"enemyBlockLong"
-        x: 230//window.width-width
-        y: 300//window.height-height
+        x: window.width-width
+        y: window.height-height
          objectName: "enemyBlockLong"
         speed:speedBox
         Image {
@@ -113,14 +126,13 @@ Rectangle {
     }
     Box
     {
-        width: 30
-        height: 60
+        width: parent.width/9
+        height:  parent.height/6
         z: 1
-        //anchors.left: parent.left
-        //anchors.bottom: parent.bottom
+
         name:"enemyBlockHigh"
-        x: 17
-        y: 239//window.height-height
+        x: 20
+        y: window.height-height
         objectName: "enemyBlockHigh"
         speed:speedBox
         Image {
@@ -131,17 +143,16 @@ Rectangle {
     }
     Box
     {
-        width: 35
-        height: 40
+        width: parent.width/10
+        height: parent.height/8
         z: 1
 
-        //anchors.horizontalCenter: parent.horizontalCenter
-        //anchors.verticalCenter: parent.verticalCenter
+
         name:"starShip"
         objectName: "starShip"
         id:starShip
-        x: 158
-        y: 158
+        x: window.width/2-width/2
+        y: window.height/2-height/2
         speed:0
         Image {
                 id: imageShip
@@ -163,6 +174,10 @@ Rectangle {
             starShip.y=mouseY-starShip.height/2;
 
         }
+        onDoubleClicked:
+        {
+            window.PlayPause()
+        }
     }
     Image {
             id: imageBackGround
@@ -175,8 +190,8 @@ Rectangle {
         loops: Animation.Infinite
         running: true
         NumberAnimation { target: labelStage; property: "opacity";from: 0; to: 1.0; duration: 200 }
-        NumberAnimation { target: labelStage; property: "rotation";from: 0; to: 360; duration: 800 }
-
+        NumberAnimation { target: labelStage; property: "rotation";from: 0; to: 360; duration: 600 }
+NumberAnimation { target: labelPause; property: "opacity";from: 0; to: 1.0; duration: 200 }
     }
 
 }

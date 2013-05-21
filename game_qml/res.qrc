@@ -1,15 +1,17 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>g.qml</file>
         <file>Image/rock10000.png</file>
         <file>Image/bg.bmp</file>
         <file>Image/ship01.png</file>
+        <file>qml/game_menu_qml/results.qml</file>
         <file>qml/game_menu_qml/main.qml</file>
-        <file>qml/game_menu_qml/controls/CustomButton.qml</file>
-        <file>qml/game_menu_qml/controls/CustomTextBox.qml</file>
         <file>qml/game_menu_qml/controls/CustomLabel.qml</file>
         <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
+        <file>qml/game_menu_qml/controls/CustomButton.qml</file>
+        <file>qml/game_menu_qml/controls/CustomTextBox.qml</file>
+        <file>main.qml</file>
+        <file>basa.qml</file>
+        <file>result.qml</file>
     </qresource>
     <qresource prefix="/Sprites">
         <file>Image/Expolison/1.png</file>
@@ -44,6 +46,7 @@
         <file>Image/Expolison/30.png</file>
         <file>Image/Expolison/31.png</file>
         <file>Image/Expolison/32.png</file>
+        <file>main.qml</file>
     </qresource>
     <qresource prefix="/res">
         <file>Image/fonts/slkscre.ttf</file>
@@ -53,5 +56,8 @@
         <file>Image/BorderSelected.png</file>
         <file>Image/Screen.png</file>
         <file>qml/game_menu_qml/controls/CustomButtonSettings.js</file>
+    </qresource>
+    <qresource prefix="/toto">
+        <file>qml/game_menu_qml/main.qml</file>
     </qresource>
 </RCC>
